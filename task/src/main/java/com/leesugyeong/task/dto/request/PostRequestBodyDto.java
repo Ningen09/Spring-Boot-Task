@@ -1,4 +1,6 @@
-package com.leesugyeong.task.dto;
+package com.leesugyeong.task.dto.request;
+
+import javax.validation.constraints.NotBlank;
 
 import lombok.*;
 
@@ -7,9 +9,20 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PostRequestBodyDto {
+    
+    @NotBlank
     private String name;
+    
+    @NotBlank
     private String category;
+    
+    @NotBlank
     private String text;
+    
+    @NotBlank
     private String date;
+    
+    @NotBlank
     private String time;
+    
 }

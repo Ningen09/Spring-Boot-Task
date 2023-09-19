@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.leesugyeong.task.dto.request.PatchRequestDto;
 import com.leesugyeong.task.dto.request.PostRequestBodyDto;
+import com.leesugyeong.task.dto.response.DeleteTaskResponseDto;
+import com.leesugyeong.task.dto.response.GetTaskResponseDto;
+import com.leesugyeong.task.dto.response.PatchTaskResponseDto;
 import com.leesugyeong.task.dto.response.PostResponseDto;
 import com.leesugyeong.task.dto.response.ResponseDto;
 import com.leesugyeong.task.service.MainService;
@@ -31,28 +34,32 @@ public class MainController {
     
     //private final MainService mainService;
 
+    //일정 작성하기
     @PostMapping("task")
-    public String postMetod(@RequestBody PostRequestBodyDto requestBody){
+    public ResponseEntity<PostResponseDto> postTask(@RequestBody PostRequestBodyDto reqeustBody){
         
-        return "일정이름 : " +  requestBody.getName() + "카테고리 : " + requestBody.getCategory() + 
-        "설명 : " + requestBody.getText() + "날짜 : " + requestBody.getDate() + "시간 : " + requestBody.getTime();
+        return null;
     }
 
+    //일정 불러오기
     @GetMapping("/task/{taskNumber}")
-    public ResponseEntity<ResponseDto> getResponseEntity() {
-        ResponseDto responseBody = new ResponseDto("code", "message");
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseBody);
+    public ResponseEntity<GetTaskResponseDto> getTask (@PathVariable("taskNumber") Integer taskNumber){
+
+        return null;
+        
     }
 
+    //일정 수정하기
     @PatchMapping("/task/{taskNumber}")
-    public String PatchMetod(@RequestBody PatchRequestDto requestBody){
-       return "번호 : " + requestBody.getNumber() + " 일정이름 : " +  requestBody.getName() + "카테고리 : " + requestBody.getCategory() + 
-        "설명 : " + requestBody.getText() + "날짜 : " + requestBody.getDate() + "시간 : " + requestBody.getTime();
+    public ResponseEntity<PatchTaskResponseDto> patchTask(@RequestBody PatchRequestDto reqeustBody){
+       
+        return null;
     }
 
+    //일정 삭제하기
     @DeleteMapping("/task/{taskNumber}")
-    public String DeleteMethod(){
-        return "This method is Delete method";
+    public ResponseEntity<DeleteTaskResponseDto> deleteTask(@PathVariable("taskNumber") Integer tasknumber){
+        return null;
     }
 
     

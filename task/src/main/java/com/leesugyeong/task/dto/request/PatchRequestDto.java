@@ -9,8 +9,29 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PatchRequestDto extends PostRequestBodyDto {
+public class PatchRequestDto {
 
-    private String number;
+    
+    private Integer number;
+    
+    //이름
+    @NotBlank
+    private String name;
+    
+    //카테고리
+    @NotBlank
+    private String category;
+    
+    //내용
+    @NotBlank
+    private String discription;
+    
+    //날짜
+    @NotBlank
+    private String date;
+    
+    //시간
+    @NotBlank
+    private String time;
     
 }

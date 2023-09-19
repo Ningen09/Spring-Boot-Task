@@ -1,4 +1,5 @@
-package com.leesugyeong.task.dto.request;
+package com.leesugyeong.task.dto.response;
+
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -9,26 +10,23 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PostRequestBodyDto {
+public class GetTaskResponseDto extends ResponseDto{
+
+    private String code;
+
+    private String message;
+
+    private Integer taskNumber;
     
-    //이름
-    @NotEmpty
-    private String name;
+    private String taskName;
     
-    //카테고리
-    @NotEmpty
     private String category;
     
-    //내용
-    @NotEmpty
     private String discription;
     
-    //날짜
-    @NotEmpty
     private String date;
     
-    //시간
-    @NotEmpty
     private String time;
+    
     
 }
